@@ -73,10 +73,10 @@ def get_pipeline(
     ## Parameters for pipeline execution
     processing_instance_count = ParameterInteger(name="ProcessingInstanceCount", default_value=1)
     processing_instance_type = ParameterString(
-        name="ProcessingInstanceType", default_value="ml.t2.medium"
+        name="ProcessingInstanceType", default_value="ml.m5.xlarge"
     )
     training_instance_type = ParameterString(
-        name="TrainingInstanceType", default_value="ml.t2.medium"
+        name="TrainingInstanceType", default_value="ml.m5.xlarge"
     )
     model_approval_status = ParameterString(
         name="ModelApprovalStatus",
@@ -209,8 +209,8 @@ def get_pipeline(
         model_data=step_train.properties.ModelArtifacts.S3ModelArtifacts,
         content_types=["text/csv"],
         response_types=["text/csv"],
-        inference_instances=["ml.t2.medium"],
-        transform_instances=["ml.t2.medium"],
+        inference_instances=["ml.t2.medium", "ml.m5.large"],
+        transform_instances=["ml.m5.large"],
         model_package_group_name=model_package_group_name,
         approval_status=model_approval_status,
         model_metrics=model_metrics,
