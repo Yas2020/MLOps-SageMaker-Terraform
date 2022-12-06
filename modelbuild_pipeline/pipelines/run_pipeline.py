@@ -73,11 +73,11 @@ def main():  # pragma: no cover
 
         execution = pipeline.start()
         print(f"\nxxxxxx Execution started with PipelineExecutionArn: {execution.arn}")
-
+        print("Here is the description of the pipeline:")
+        execution.describe()
         print("Waiting for the execution to finish...")
         execution.wait()
         print("\nxxxxxx Execution completed. Execution step details:")
-
         print(execution.list_steps())
         # Todo print the status?
     except Exception as e:  # pylint: disable=W0703
