@@ -73,10 +73,10 @@ def get_pipeline(
     ## Parameters for pipeline execution
     processing_instance_count = ParameterInteger(name="ProcessingInstanceCount", default_value=1)
     processing_instance_type = ParameterString(
-        name="ProcessingInstanceType", default_value=""ml.t2.medium""
+        name="ProcessingInstanceType", default_value="ml.t2.medium"
     )
     training_instance_type = ParameterString(
-        name="TrainingInstanceType", default_value=""ml.t2.medium""
+        name="TrainingInstanceType", default_value="ml.t2.medium"
     )
     model_approval_status = ParameterString(
         name="ModelApprovalStatus",
